@@ -1,0 +1,44 @@
+<div class="container__card__login">
+  <div class="container__card__login__image">
+    <div class="imagen__login"></div>
+  </div>
+  <div class="container__card__login__form">
+    <div class="card__login">
+      <p class="titulo__login">
+        Bienvenido
+      </p>
+      <div class="alignCenter">
+        <p class='text__login'>
+          Inicia sesión
+        </p>
+      </div>
+      <form novalidate class="form_login" [formGroup]="myForm"  (ngSubmit)="login()">
+        <div class="form__login__c">
+          <label class="form__login__label" >Correo eléctronico</label>
+        </div>
+        <div class="form__login__inputs__c">
+          <input class="login__input" placeholder="Correo eléctronico" type="email" formControlName="email"/>
+        </div>
+        <div class="form__login__c">
+          <label class="form__login__label">Contraseña</label>
+        </div>
+        <div class="form__login__inputs__c">
+          <input class="login__input" placeholder="Contraseña" type="password" formControlName="password"/>
+        </div>
+        <div class="form__login__recuperar">
+          <p>
+            <a aria-label="login" class="recuperar__text">¿Olvidaste tu contraseña?</a>
+          </p>
+        </div>
+        <div class="form__login__button">
+          <button class="button__login" [disabled]="myForm.invalid">Iniciar Sesión</button>
+        </div>
+        <div class="form__login__registrar">
+          <p class="registrar__text">¿Aún no tienes cuenta?
+            <a routerLink="/auth/register">Registrate</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

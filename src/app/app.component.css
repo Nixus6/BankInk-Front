@@ -1,0 +1,43 @@
+:root {
+  --primary-color-yellow: #fdda24;
+  --primary-color-mok: #d40b66;
+  --primary-color-light-yellow: #fff8e8;
+  --primary-color-dark-yellow: #ffc20e;
+  --primary-color-pink: #f5b6cd;
+  --primary-color-black: #2a2a2a;
+  --primary-color-green: #00c389;
+  --primary-color-light-pink: #f5b6cd50;
+  --primary-color-orange: #ff7f41;
+  --primary-color-light-blue: #f2fbfd;
+  --primary-color-blue: #59cbe8;
+  --primary-color-dark-blue: #034797;
+  --primary-color-red: #d32424;
+  --primary-color-gray: #58595b;
+  --primary-color-light-gray: #f9f9f9;
+  --primary-color-dark-red: #661111;
+  --padding-top-forms: 100px;
+  --primary-color-purple: #9063cd;
+}
+*, *::before,*::after{
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+}
+
+@font-face {
+  src: url("../assets/fonts/CIBFontSans-Bold.otf") format("truetype");
+  font-family: cibSans-Bold;
+  font-display: swap;
+}
+@font-face {
+  src: url("../assets/fonts/CIBFontSans-Light.otf") format("truetype");
+  font-family: cibSans-Light;
+  font-display: swap;
+}
+@font-face {
+  src: url("../assets/fonts/CIBFontSans-Book.otf") format("truetype");
+  font-family: cibSans-Book;
+  font-display: swap;
+}
+

@@ -5,11 +5,11 @@
   <div class="container__card__login__form">
     <div class="card__login">
       <p class="titulo__login">
-        Bienvenido
+        Welcome
       </p>
       <div class="alignCenter">
         <p class='text__login'>
-          Inicia sesión
+          Log In
         </p>
       </div>
       <form novalidate class="form_login" [formGroup]="myForm"  (ngSubmit)="login()">
@@ -31,11 +31,11 @@
           </p>
         </div>
         <div class="form__login__button">
-          <button class="button__login" [disabled]="myForm.invalid">Iniciar Sesión</button>
+          <button class="button__login" [disabled]="myForm.invalid">Log In</button>
         </div>
         <div class="form__login__registrar">
           <p class="registrar__text">¿Aún no tienes cuenta?
-            <a routerLink="/auth/register">Registrate</a>
+            <a routerLink="/auth/register">Register</a>
           </p>
         </div>
       </form>

@@ -9,8 +9,8 @@ const routes: Routes = [
     loadChildren: () => import ('./auth/auth.module').then(m =>m.AuthModule),
   },
   {
-    canActivate: [ isAutheticatedGuard ],
     path:'marketplace',
+    canActivate: [ isAutheticatedGuard ],
     loadChildren: () => import ('./marketplace/marketplace.module').then(m =>m.MarketplaceModule),
   },
   {

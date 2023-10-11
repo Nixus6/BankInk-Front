@@ -15,12 +15,27 @@
       <a href="#">Home</a><a href="#">About</a><a href="#">Contact</a
       ><a href="#">Blog</a><a href="#">Careers</a>
     </div> -->
+    <div class="header__main__button">
+      <a href="#" class="button button-color-register">Register</a>
 
-    <a href="#" class="button button-color"
-      >Iniciar Sesión</a
-    >
+      <a href="#" class="button button-color">Log In</a>
+    </div>
+    <div class="header__main__icon">
+      <a class="header__cart" routerLink="/marketplace/basket">
+        <img src="../../../../../assets/icons/carrito.svg" alt="shop">
+        <span id="cart_menu_num" data-action="cart-can" class="badge rounded-circle">5</span>
+      </a>
+
+      <input class="dropdown dropdown-display" type="checkbox" id="dropdown" name="dropdown" />
+      <label class="for-dropdown" for="dropdown"><img src="../../../../../assets/icons/user.svg" alt="user" ></label>
+      <div class="section-dropdown flex">
+        <a href="">My Cards</a>
+        <a href="">My Transactions</a>
+        <a id="logout" href="">Log Out</a>
+      </div>
+    </div>
   </nav>
-<!--
+  <!--
   <div class="header__menu has-fade">
     <a href="">Home</a>
     <a href="">About</a>

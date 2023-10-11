@@ -1,0 +1,21 @@
+<section class="products">
+  <div class="product__content container container--pall">
+    <h2>Shop</h2>
+    <div class="product__grid">
+        <a class="product__item flex" *ngFor="let product of products">
+          <div class="product__image">
+            <img [src]=[product.image] />
+          </div>
+          <div class="product__text">
+            <div class="product__price">${{product.price}}</div>
+            <div class="product__title">
+              {{product.title}}
+            </div>
+          </div>
+          <div class="product__button ">
+            <button class="button button-color" (click)="addToCart()">Add to Cart</button>
+          </div>
+        </a>
+    </div>
+  </div>
+</section>

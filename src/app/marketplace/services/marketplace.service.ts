@@ -20,7 +20,7 @@ export class MarketplaceService {
   // }
 
   getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.productsUrl}?offset=0&limit=8`);
+    return this.http.get<Product[]>(`${this.productsUrl}`);
   }
   // getCardsByIdUser(): Observable<boolean> {
   //   return this.http.get<CardResponse>(`${this.baseUrl}/v1/tarjets/${localStorage.getItem('User')}`)
@@ -50,5 +50,9 @@ export class MarketplaceService {
           this._refresh$.next();
         })
       )
+  }
+
+  getProductByTitle(name:String): Observable<Product[]>{
+    return this.http.get<Product[]>(`${this.productsUrl}?title=${name}`);
   }
 }

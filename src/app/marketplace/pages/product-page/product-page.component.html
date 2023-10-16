@@ -1,21 +1,41 @@
 <section class="products">
   <div class="product__content container container--pall">
     <h2>Shop</h2>
+    <div class="search flex">
+      <div class="search__container">
+        <div class="search__relative">
+          <!-- <div class="search__icon">
+            <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div> -->
+          <input class="searchInput" type="search" id="default-search" (input)="search($event)" placeholder="Search..."
+            required>
+          <button class="search__button" type="submit" (click)="getProductByTitle()">Search</button>
+        </div>
+      </div>
+    </div>
     <div class="product__grid">
-        <a class="product__item flex" *ngFor="let product of products">
-          <div class="product__image">
-            <img [src]=[product.images] />
+      <a class="product__item flex" *ngFor="let product of products | paginate: { itemsPerPage: 8, currentPage: p }; let i = index">
+        <div class="product__image">
+          <img [src]=[product.images] />
+        </div>
+        <div class="product__text">
+          <div class="product__price">${{product.price}}</div>
+          <div class="product__title">
+            {{product.title}}
           </div>
-          <div class="product__text">
-            <div class="product__price">${{product.price}}</div>
-            <div class="product__title">
-              {{product.title}}
-            </div>
-          </div>
-          <div class="product__button ">
-            <button class="button button-color" (click)="addToCart()">Add to Cart</button>
-          </div>
-        </a>
+        </div>
+        <div class="product__button ">
+          <button class="button button-color" (click)="addToCart()">Add to Cart</button>
+        </div>
+      </a>
+    </div>
+    <div class="paginator-container flex">
+      <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"
+        nextLabel="Siguiente"></pagination-controls>
     </div>
   </div>
 </section>

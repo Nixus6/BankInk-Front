@@ -12,7 +12,7 @@ export class ProductsPageComponent {
   constructor(private marketPlaceService: MarketplaceService) { }
 
   ngOnInit(): void {
-    this.marketPlaceService.getHeroes()
+    this.marketPlaceService.getProducts()
       .subscribe(products => this.products = products);
   }
   addToCart() {

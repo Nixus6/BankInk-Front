@@ -1,0 +1,94 @@
+.cards {
+  background-color: #fafafa;
+}
+
+.card__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.875rem;
+}
+
+@media (min-width: 40em) {
+  .card__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64em) {
+  .card__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card__item {
+  border-radius: 0.3125rem;
+  border: 0.125rem solid ;
+  /*#fab300*/
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.15);
+  transition: all 150ms ease-in-out;
+  text-decoration: none;
+  flex-direction: column;
+  padding: 1.875rem 1.875rem 2.5rem 1.875rem;
+}
+
+.card__new__item {
+  border-radius: 0.3125rem;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.15);
+  transition: all 150ms ease-in-out;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card__new__item:hover {
+  transform: scale(1.05);
+}
+
+.card__new__item img {
+  height: 5rem;
+}
+
+.cards__icon__type {
+  margin-bottom: 0.75rem;
+  justify-content: space-between;
+}
+
+.cards__icon__type img {
+  height: 1rem;
+}
+
+.cards__microchip__saldo img {
+  height: 2rem;
+  margin-bottom: 0.875rem;
+}
+
+.cards__microchip__saldo {
+  margin-bottom: 0.75rem;
+  justify-content: space-between;
+}
+
+.card__title {
+  font-family: cibSans-Bold, sans-serif !important;
+  font-size: 0.625rem;
+  color: #9698a6;
+}
+
+.card__sell {
+  margin-bottom: 0;
+}
+
+.card__text {
+  margin-right: 1.875rem;
+}
+
+#name__card {
+  text-transform: uppercase;
+}
+
+

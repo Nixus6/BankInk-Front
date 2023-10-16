@@ -1,0 +1,29 @@
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade modal-bg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Select the type of card you want to create</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
+      <div class="modal-body flex">
+          <select class="type__card" formControlName="typeTarjet">
+            <option value=""></option>
+            <option value="credit">Credit</option>
+            <option value="debit">Debit</option>
+          </select>
+        </div>
+      </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-ezq" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary btn-primary-color" (click)="onSubmit()">Create Card</button>
+      </div>
+    </div>
+  </div>
+</div>

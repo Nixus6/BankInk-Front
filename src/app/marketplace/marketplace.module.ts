@@ -4,22 +4,27 @@ import { CommonModule } from '@angular/common';
 import { MarketplaceRoutingModule } from './marketplace-routing.module';
 import { MarketplaceLayoutComponent } from './layouts/marketplace-layout/marketplace-layout.component';
 import { ProductsPageComponent } from './pages/product-page/product-page.component';
-import { CardProductComponent } from './components/card/card-product/card-product.component';
 import { BasketPageComponent } from './pages/basket-page/basket-page.component';
 import { CardPageComponent } from './pages/card-page/card-page.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
   declarations: [
     MarketplaceLayoutComponent,
     ProductsPageComponent,
-    CardProductComponent,
+    ModalComponent,
     BasketPageComponent,
-    CardPageComponent
+    CardPageComponent,
+    ModalComponent
   ],
   imports: [
     CommonModule,
-    MarketplaceRoutingModule
+    MarketplaceRoutingModule,
+    ReactiveFormsModule,
+    NgxPaginationModule
   ]
 })
 export class MarketplaceModule { }

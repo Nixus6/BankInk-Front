@@ -29,7 +29,6 @@
   transition: all 150ms ease-in-out;
   text-decoration: none;
   flex-direction:column;
-
 }
 
 .product__item:hover {

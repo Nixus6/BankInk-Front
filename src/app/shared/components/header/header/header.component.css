@@ -210,6 +210,18 @@
   font-family: cibSans-Bold, sans-serif !important;
   color: #2a2a2a;
 }
+/*TODO:revisar cambio mouse sobre*/
+.selectDropOp1::before {
+  content: "";
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.25);
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+.selectDropOp1:hover::before{
+  opacity: 1;
+}
 
 #logout {
   background-color: rgba(255, 0, 0, 0.767);

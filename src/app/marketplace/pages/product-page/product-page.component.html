@@ -4,7 +4,7 @@
     <div class="product__grid">
         <a class="product__item flex" *ngFor="let product of products">
           <div class="product__image">
-            <img [src]=[product.image] />
+            <img [src]=[product.images] />
           </div>
           <div class="product__text">
             <div class="product__price">${{product.price}}</div>

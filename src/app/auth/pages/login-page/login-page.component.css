@@ -110,15 +110,15 @@
 }
 
 .button__login {
-  width: 100%;
-  text-decoration: none;
+   width: 100%;
+  /*text-decoration: none;
   padding: 10px 25px;
   font-weight: 700;
-  font-family: cibSans-Bold, sans-serif !important;
+  font-family: cibSans-Bold, sans-serif !important; */
   background-color: hsl(43, 100%, 49%);
-  border-radius: 25px;
+  /* border-radius: 25px;
   border: 0 solid;
-  cursor: pointer;
+  cursor: pointer; */
 }
 
 .form__login__registrar {

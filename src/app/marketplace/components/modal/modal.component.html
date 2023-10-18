@@ -4,25 +4,31 @@
 </button> -->
 
 <!-- Modal -->
-<div class="modal fade modal-bg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- //TODO: ERROR CAMBIO MODAL AL CLICKEAR POR FUERA-->
+<div class="modal fade modal-bg" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" >
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Select the type of card you want to create</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title" id="exampleModalLabel">{{idCard===0?'Select the type of card you want to create':'Enter the balance to recharge'}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeModal()"></button>
       </div>
-      <form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
-      <div class="modal-body flex">
-          <select class="type__card" formControlName="typeTarjet">
+      <form [formGroup]="idCard==0?cardForm:cardFormUpd" (ngSubmit)="onSubmit()">
+        <div class="modal-body flex">
+          <select *ngIf="idCard==0" class="type__card" formControlName="typeTarjet">
             <option value=""></option>
             <option value="credit">Credit</option>
             <option value="debit">Debit</option>
           </select>
+          <!-- //TODO: PERMITIR SOLO NUMEROS-->
+          <input *ngIf="idCard!=0" class="type__card" formControlName="saldo" placeholder="Balance">
         </div>
       </form>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btn-ezq" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary btn-primary-color" (click)="onSubmit()">Create Card</button>
+        <button type="button" class="btn btn-secondary btn-ezq" data-bs-dismiss="modal" (click)="closeModal()">Close</button>
+        <button type="button" class="btn btn-primary btn-primary-color" data-bs-dismiss="modal" (click)="onSubmit()"
+          [disabled]="cardForm.invalid" *ngIf="idCard==0">Create Card</button>
+        <button type="button" class="btn btn-primary btn-primary-color" data-bs-dismiss="modal"
+          (click)="upBalance()" *ngIf="idCard!=0">Update Balance</button>
       </div>
     </div>
   </div>

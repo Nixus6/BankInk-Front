@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 
 @Component({
   templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.css']
+  styleUrls: ['./login-page.component.css','../../../app.component.css']
 })
 export class LoginPageComponent {
   private fb = inject(FormBuilder);

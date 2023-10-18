@@ -34,9 +34,9 @@ export class AppComponent {
         this.router.navigateByUrl('/marketplace');
         return;
 
-        case AuthStatus.notAuthenticated:
-          this.router.navigateByUrl('/auth/login');
-          return;
+      case AuthStatus.notAuthenticated:
+        this.router.navigateByUrl('/auth/login');
+        return;
 
     }
   })

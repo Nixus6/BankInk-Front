@@ -53,4 +53,11 @@ export class AuthService {
     return of(false);
   }
 
+  logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('User');
+    this._currentUser.set(null);
+    this._authStatus.set( AuthStatus.notAuthenticated );
+
+  }
 }

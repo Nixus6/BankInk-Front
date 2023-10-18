@@ -6,3 +6,7 @@ export interface CardRegister {
 export interface IdUser {
   id: number
 }
+
+export interface Balance {
+  saldo: number
+}

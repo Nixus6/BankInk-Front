@@ -323,3 +323,7 @@
 .btn-ezq{
   border-radius: 0.25rem;
 }
+
+.modal-bg{
+  background-color: rgba(0,0,0, 0.5) !important;
+}

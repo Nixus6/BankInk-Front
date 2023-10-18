@@ -30,11 +30,14 @@
             <h3 class="card__sell">{{card.fechaVencimiento| date:'MM/yyyy'}}</h3>
           </div>
         </div>
-        <div class="cards__name">
+        <div class="cards__name__balance flex">
           <h3 class="card__sell" id="name__card">{{card.titular.firstname}} {{card.titular.lastname}}</h3>
+          <a *ngIf="card.typeTarget=='DEBIT'" (click)="updateBalance(card.id)" class="card__new__balance" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <img src="../../../../assets/icons/newSaldo.svg"/>
+          </a>
         </div>
       </a>
-      <a class="card__new__item" (click)="addCart()" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <a class="card__new__item" data-bs-toggle="modal" data-bs-target="#exampleModal">
         <img src="../../../../assets/icons/addCards.svg" alt="addCards" />
       </a>
     </div>

@@ -22,7 +22,7 @@
 
 .card__item {
   border-radius: 0.3125rem;
-  border: 0.125rem solid ;
+  border: 0.125rem solid;
   /*#fab300*/
   overflow: hidden;
   background-color: white;
@@ -44,6 +44,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .card__new__item:hover {
@@ -91,4 +92,15 @@
   text-transform: uppercase;
 }
 
+.cards__name__balance {
+  justify-content: space-between !important;
+  align-items: center;
+}
 
+.cards__name__balance img {
+  height: 2rem;
+}
+
+.card__new__balance{
+  cursor: pointer;
+}

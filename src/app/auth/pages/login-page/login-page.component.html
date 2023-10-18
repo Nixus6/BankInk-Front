@@ -14,27 +14,27 @@
       </div>
       <form novalidate class="form_login" [formGroup]="myForm"  (ngSubmit)="login()">
         <div class="form__login__c">
-          <label class="form__login__label" >Correo eléctronico</label>
+          <label class="form__login__label" >Email</label>
         </div>
         <div class="form__login__inputs__c">
-          <input class="login__input" placeholder="Correo eléctronico" type="email" formControlName="email"/>
+          <input class="login__input" placeholder="Email" type="email" formControlName="email"/>
         </div>
         <div class="form__login__c">
-          <label class="form__login__label">Contraseña</label>
+          <label class="form__login__label">Password</label>
         </div>
         <div class="form__login__inputs__c">
-          <input class="login__input" placeholder="Contraseña" type="password" formControlName="password"/>
+          <input class="login__input" placeholder="Password" type="password" formControlName="password"/>
         </div>
         <div class="form__login__recuperar">
           <p>
-            <a aria-label="login" class="recuperar__text">¿Olvidaste tu contraseña?</a>
+            <a aria-label="login" class="recuperar__text">¿Forgot your password?</a>
           </p>
         </div>
         <div class="form__login__button">
-          <button class="button__login" [disabled]="myForm.invalid">Log In</button>
+          <button class="button button__login" [disabled]="myForm.invalid">Log In</button>
         </div>
         <div class="form__login__registrar">
-          <p class="registrar__text">¿Aún no tienes cuenta?
+          <p class="registrar__text">¿You don't have an account yet?
             <a routerLink="/auth/register">Register</a>
           </p>
         </div>

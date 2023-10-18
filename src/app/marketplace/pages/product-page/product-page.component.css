@@ -107,14 +107,14 @@
   display: block;
   padding: 1rem;
   padding-left: 2.5rem;
-  border-radius: 0.5rem;
+  border-radius: 15px;
   border-width: 1px;
-  border-color: #D1D5DB;
+  border-color: #e5eaec;
   width: 95%;
   font-size: 0.875rem;
   line-height: 0.25rem;
   color: #111827;
-  background-color: #F9FAFB;
+  background-color: #e5eaec !important;
 
 }
 

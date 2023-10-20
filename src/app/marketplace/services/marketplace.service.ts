@@ -1,4 +1,4 @@
-import { Injectable, computed, signal } from '@angular/core';
+import { EventEmitter, Injectable, computed, signal } from '@angular/core';
 import { BehaviorSubject, Observable, Subject, catchError, map, tap, throwError } from 'rxjs';
 import { Balance, CardRegister, CardResponse, Product } from '../interfaces';
 import { HttpClient } from '@angular/common/http';
@@ -14,6 +14,10 @@ export class MarketplaceService {
   constructor(private http: HttpClient) { }
   public _refresh$ = new Subject<void>();
   private _idBalance = new BehaviorSubject<number>(0);
+  private _cantBasket = new BehaviorSubject<number>(0);
+  public cartData = new EventEmitter<Product[] | []>();
+  // private cantBasket = this._cantBasket.asObservable();
+  productQuantity:number=0;
   public idCard: number = 0;
 
   get getIdCard(): Observable<number> {
@@ -21,6 +25,22 @@ export class MarketplaceService {
   }
   setIdCard(id: number): void {
     this._idBalance.next(id);
+  }
+
+  get getCantBasket(): Observable<number> {
+    return this._cantBasket.asObservable();
+  }
+  setCantBasket(op: string): void {
+    if (op === "plus") {
+      this.productQuantity+=1;
+      localStorage.setItem("cantProduct",JSON.stringify(this.productQuantity))
+      this._cantBasket.next(this.productQuantity);
+    }
+    if (op === "min") {
+      this.productQuantity-=1;
+      localStorage.setItem("cantProduct",JSON.stringify(this.productQuantity))
+      this._cantBasket.next(this.productQuantity);
+    }
   }
 
   getProducts(): Observable<Product[]> {
@@ -52,5 +72,19 @@ export class MarketplaceService {
           this._refresh$.next();
         })
       )
+  }
+
+  localAddCart(product: Product){
+    let cartDataA = [];
+    let localCart = localStorage.getItem('productBasket');
+    if (!localCart) {
+      localStorage.setItem("productBasket", JSON.stringify([product]));
+      this.cartData.emit([product]);
+    } else {
+      cartDataA = JSON.parse(localCart);
+      cartDataA.push(product);
+      localStorage.setItem("productBasket", JSON.stringify(cartDataA));
+      this.cartData.emit(cartDataA);
+    }
   }
 }

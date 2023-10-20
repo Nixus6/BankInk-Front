@@ -28,7 +28,7 @@
         <button type="button" class="btn btn-primary btn-primary-color" data-bs-dismiss="modal" (click)="onSubmit()"
           [disabled]="cardForm.invalid" *ngIf="idCard==0">Create Card</button>
         <button type="button" class="btn btn-primary btn-primary-color" data-bs-dismiss="modal"
-          (click)="upBalance()" *ngIf="idCard!=0">Update Balance</button>
+          (click)="upBalance()" *ngIf="idCard!=0" [disabled]="cardFormUpd.invalid">Update Balance</button>
       </div>
     </div>
   </div>

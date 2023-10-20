@@ -1,10 +1,31 @@
 <section class="basket">
   <div class="basket__content container container--pall">
     <h2>Basket</h2>
-    <div class="basket__grid">
-      <a class="product__item flex" >
-
-      </a>
+    <div class="basket-prin flex">
+      <div class="basket__grid">
+        <a class="product__item flex" *ngFor="let product of cartData">
+          <div class="product__img">
+            <img [src]=[product.images] alt="addCards" />
+          </div>
+          <div class="product__text">
+            <h3>{{product.title}}</h3>
+          </div>
+          <div class="product__text">
+            <h3>{{product.price}} USD$</h3>
+          </div>
+        </a>
+      </div>
+      <div class="basket__grid__price">
+        <a class="product__item flex__direction flex">
+          <div class="product__text__price">
+            <div class="product__title">Total:</div>
+            <div class="product__price">{{itemPrice}} USD$</div>
+          </div>
+          <div class="product__button">
+            <button class="">Pay</button>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 </section>

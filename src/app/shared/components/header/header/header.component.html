@@ -1,5 +1,4 @@
 <header class="header">
-
   <nav class="container container--pall flex flex-jc-sb flex-ai-c">
     <a href="/" class="header__logo">
       <img src="../../../../../assets/images/logo.webp" alt="Easybank" />
@@ -16,7 +15,7 @@
 
       <a class="header__cart" routerLink="/marketplace/basket">
         <img src="../../../../../assets/icons/carrito.svg" alt="shop">
-        <span id="cart_menu_num" data-action="cart-can" class="badge rounded-circle">5</span>
+        <span id="cart_menu_num" data-action="cart-can" class="badge rounded-circle">{{cantBasket}}</span>
       </a>
 
       <input class="dropdown dropdown-display" type="checkbox" id="dropdown" name="dropdown" />

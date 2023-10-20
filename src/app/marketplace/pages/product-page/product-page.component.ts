@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, EventEmitter, inject } from '@angular/core';
 import { Product } from '../../interfaces';
 import { MarketplaceService } from '../../services/marketplace.service';
 
@@ -7,6 +7,7 @@ import { MarketplaceService } from '../../services/marketplace.service';
   styleUrls: ['./product-page.component.css', '../../../app.component.css']
 })
 export class ProductsPageComponent {
+
   public searchTerm$: String = "";
   public products: Product[] = [];
   public productQuantity: number = 0;
@@ -21,13 +22,13 @@ export class ProductsPageComponent {
     this.marketPlaceService.getProducts()
       .subscribe(products => this.products = products);
   }
-  addToCart() {
-    if (localStorage.getItem("User")) {
-      this.productQuantity += 1;
-    }
+
+  addToCart(product: Product) {
+    this.marketPlaceService.localAddCart(product);
   }
+
   getProductByTitle() {
-    this.products=[];
+    this.products = [];
     this.marketPlaceService.getProductByTitle(this.searchTerm$).subscribe(products => this.products = products);
   }
 
@@ -38,6 +39,6 @@ export class ProductsPageComponent {
       this.marketPlaceService.getProducts()
         .subscribe(products => this.products = products);
     }
-
   }
+
 }

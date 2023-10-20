@@ -12,7 +12,8 @@
     </div>
     <div class="product__grid">
       <!-- //TODO: Error al paginar en pagina diferente ala primera-->
-      <a class="product__item flex" *ngFor="let product of products | paginate: { itemsPerPage: 8, currentPage: p }; let i = index">
+      <a class="product__item flex"
+        *ngFor="let product of products | paginate: { itemsPerPage: 8, currentPage: p }; let i = index">
         <div class="product__image">
           <img [src]=[product.images] />
         </div>
@@ -23,7 +24,7 @@
           </div>
         </div>
         <div class="product__button ">
-          <button class="button button-color" (click)="addToCart()">Add to Cart</button>
+          <button class="button button-color" (click)="addToCart(product)">Add to Cart</button>
         </div>
       </a>
     </div>

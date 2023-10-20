@@ -23,7 +23,9 @@ export class ModalComponent {
   });
 
   public cardFormUpd: FormGroup = this.fbB.group({
-    saldo: ['', [Validators.required, Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]]
+    saldo: ['', [Validators.required
+      // , Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')
+    ]]
   });
   // public cardForm = new FormGroup({
   //   typeTarjet: new FormControl<string>(''),

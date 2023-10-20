@@ -12,7 +12,7 @@ const routes: Routes = [{
     { path: 'products', component: ProductsPageComponent },
     { path: 'basket', component: BasketPageComponent },
     { path: 'cards', component: CardPageComponent },
-    { path: '**', redirectTo: 'products' }
+    { path: '**', redirectTo: 'basket' }
   ]
 }];
 

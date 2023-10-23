@@ -1,0 +1,25 @@
+<section class="products">
+  <div class="product__content container container--pall">
+    <h2>Transaction</h2>
+    <table class="rwd-table">
+      <tr>
+        <th>Transaction Id</th>
+        <th>Number on The Card</th>
+        <th>Transaction Date</th>
+        <th>Price</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+      <tr *ngFor="let transaction of transactions">
+        <td>{{transaction.id}}</td>
+        <td>{{transaction.tarjet.idProducto}}</td>
+        <td>{{transaction.fechaTransaccion | date:"MM/dd/yyyy 'at' h:mma"}}</td>
+        <td>{{transaction.totalPrice}}</td>
+        <td
+          [ngStyle]="transaction.state==='SUCCESSFUL'?{'color': '#00afaa'}:transaction.state==='REEJECTED'?{'color': '#fab300'}:{'color': '#e92d2d'}">
+          {{transaction.state}}</td>
+        <td *ngIf="transaction.state==='SUCCESSFUL'&&validarFecha(transaction.fechaTransaccion)"><button class="button-color" (click)="changeStateTransaction(transaction.id)">Cancel</button></td>
+      </tr>
+    </table>
+  </div>
+</section>

@@ -2,7 +2,29 @@
   <div class="basket__content container container--pall">
     <h2>Basket</h2>
     <div class="basket-prin flex">
-      <div class="basket__grid">
+      <div class="basket__grid" *ngIf="payState">
+        <formb [formGroup]="cardForm" class="form__cart product__item">
+          <div class="form__cart__c">
+            <label class="cart__label">Name on the card</label>
+          </div>
+          <div class="form__cart__input">
+            <input class="cart__input" placeholder="Name on the card" formControlName="name" />
+          </div>
+          <div class="form__cart__c">
+            <label class="cart__label">Card number</label>
+          </div>
+          <div class="form__cart__input">
+            <input class="cart__input" placeholder="1234 5467 2791 2456" formControlName="idProducto" maxlength="16"/>
+          </div>
+          <div class="form__cart__c">
+            <label class="cart__label">Expiry date</label>
+          </div>
+          <div class="form__cart__input">
+            <input class="cart__input" placeholder="MM/AA" formControlName="expiryDate"/>
+          </div>
+        </formb>
+      </div>
+      <div class="basket__grid" *ngIf="!payState">
         <a class="product__item flex" *ngFor="let product of cartData">
           <div class="product__img">
             <img [src]=[product.images] alt="addCards" />
@@ -22,7 +44,8 @@
             <div class="product__price">{{itemPrice}} USD$</div>
           </div>
           <div class="product__button">
-            <button class="">Pay</button>
+            <button class="" (click)="pay()" *ngIf="!payState">Pay</button>
+            <button class="" (click)="onSubmit()"  *ngIf="payState">Complete Payment</button>
           </div>
         </a>
       </div>

@@ -4,6 +4,7 @@ import { MarketplaceLayoutComponent } from './layouts/marketplace-layout/marketp
 import { ProductsPageComponent } from './pages/product-page/product-page.component';
 import { BasketPageComponent } from './pages/basket-page/basket-page.component';
 import { CardPageComponent } from './pages/card-page/card-page.component';
+import { TransactionPageComponent } from './pages/transaction-page/transaction-page.component';
 
 const routes: Routes = [{
   path: '',
@@ -12,7 +13,8 @@ const routes: Routes = [{
     { path: 'products', component: ProductsPageComponent },
     { path: 'basket', component: BasketPageComponent },
     { path: 'cards', component: CardPageComponent },
-    { path: '**', redirectTo: 'basket' }
+    { path: 'transactions', component: TransactionPageComponent },
+    { path: '**', redirectTo: 'transactions' }
   ]
 }];
 

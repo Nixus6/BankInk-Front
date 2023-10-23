@@ -9,6 +9,7 @@ import { CardPageComponent } from './pages/card-page/card-page.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { TransactionPageComponent } from './pages/transaction-page/transaction-page.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ModalComponent,
     BasketPageComponent,
     CardPageComponent,
-    ModalComponent
+    ModalComponent,
+    TransactionPageComponent
   ],
   imports: [
     CommonModule,

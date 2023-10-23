@@ -4,7 +4,7 @@
       <img src="../../../../../assets/images/logo.webp" alt="Easybank" />
     </a>
     <div class="header__main__button" *ngIf="this.authService.authStatus()=== AuthStatus.notAuthenticated">
-      <a routerLink="" class="button button-color-register">Register</a>
+      <a routerLink="/auth/register" class="button button-color-register">Register</a>
 
       <a routerLink="/auth/login" class="button button-color">Log In</a>
     </div>
@@ -22,7 +22,7 @@
       <label class="for-dropdown" for="dropdown"><img src="../../../../../assets/icons/user.svg" alt="user"></label>
       <div class="section-dropdown flex">
         <a routerLink="/marketplace/cards">My Cards</a>
-        <a>My Transactions</a>
+        <a routerLink="/marketplace/transactions">My Transactions</a>
         <a id="logout" (click)="onLogout()" routerLink="">Log Out</a>
       </div>
     </div>

@@ -1,3 +1,5 @@
+*{box-sizing: border-box;}
+
 .basket__grid {
   display: grid;
   /* grid-template-columns: 1fr; */
@@ -79,3 +81,38 @@
 .product__text__price{
   margin-bottom: 0.5rem;
 }
+
+.cart__label{
+  font-family: cibSans-Book, sans-serif;
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #2d314d;
+  font-weight: 700;
+}
+
+.cart__input{
+  display: block;
+  padding: 1rem;
+  padding-left: 2.5rem;
+  border-radius: 15px;
+  border-width: 1px;
+  width: 95%;
+  font-size: 0.875rem;
+  line-height: 0.25rem;
+  color: #111827;
+  background-color: #e5eaec !important;
+}
+
+.form__cart__c{
+  margin-bottom: 0.25rem;
+}
+.form__cart__input{
+  margin-bottom: 0.83rem;
+}
+/* .form__cart__c{
+  display: flex;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 0.5rem !important;
+} */

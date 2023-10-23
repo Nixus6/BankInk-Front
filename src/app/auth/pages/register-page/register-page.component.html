@@ -1,1 +1,63 @@
-<p>register-page works!</p>
+<div class="container__card__login">
+  <div class="container__card__login__image">
+    <div class="imagen__login"></div>
+  </div>
+  <div class="container__card__login__form">
+    <div class="card__login">
+      <p class="titulo__login">
+        Welcome
+      </p>
+      <div class="alignCenter">
+        <p class='text__login'>
+          Register
+        </p>
+      </div>
+      <form novalidate class="form_login">
+
+        <div class="form__login__c">
+          <label class="form__login__label">Firstname</label>
+        </div>
+        <div class="form__login__inputs__c">
+          <input class="login__input" placeholder="Firstname" type="text"/>
+        </div>
+
+        <div class="form__login__c">
+          <label class="form__login__label">Lastname</label>
+        </div>
+        <div class="form__login__inputs__c">
+          <input class="login__input" placeholder="Lastname" type="text"/>
+        </div>
+
+        <div class="form__login__c">
+          <label class="form__login__label" >Email</label>
+        </div>
+        <div class="form__login__inputs__c">
+          <input class="login__input" placeholder="Email" type="email" formControlName="email"/>
+        </div>
+
+        <div class="form__login__c">
+          <label class="form__login__label">Password</label>
+        </div>
+        <div class="form__login__inputs__c">
+          <input class="login__input" placeholder="Password" type="password" formControlName="password"/>
+        </div>
+
+        <div class="form__login__c">
+          <label class="form__login__label">Password</label>
+        </div>
+        <div class="form__login__inputs__c">
+          <input class="login__input" placeholder="Password" type="password" formControlName="password"/>
+        </div>
+
+        <div class="form__login__button">
+          <button class="button button__login" >Log In</button>
+        </div>
+        <div class="form__login__registrar">
+          <p class="registrar__text">¿Already have an account?
+            <a routerLink="/auth/login">Enter here</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

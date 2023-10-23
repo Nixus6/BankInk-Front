@@ -14,7 +14,7 @@ const routes: Routes = [{
     { path: 'basket', component: BasketPageComponent },
     { path: 'cards', component: CardPageComponent },
     { path: 'transactions', component: TransactionPageComponent },
-    { path: '**', redirectTo: 'transactions' }
+    { path: '**', redirectTo: 'products' }
   ]
 }];
 

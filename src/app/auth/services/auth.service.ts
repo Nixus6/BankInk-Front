@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, computed, inject, signal } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Observable, catchError, map, of, tap, throwError } from 'rxjs';
-import { AuthStatus, LoginResponse, User } from '../interfaces';
+import { AuthStatus, LoginResponse, User, UserRegister, UserRegisterResponse } from '../interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -41,12 +41,17 @@ export class AuthService {
         catchError(err => throwError(() => err.error.message))
       );
   }
+
+  register(data: UserRegister) {
+    const url = `${this.baseUrl}/auth/register`;
+    return this.http.post<UserRegisterResponse>(url, data);
+  }
   checkAuthStatus(): Observable<boolean> {
     const token = localStorage.getItem('token');
     console.log("token:: ", token);
     if (token) {
       this._authStatus.set(AuthStatus.authenticated);
-    }else {
+    } else {
       this._authStatus.set(AuthStatus.notAuthenticated);
 
     }
@@ -57,7 +62,7 @@ export class AuthService {
     localStorage.removeItem('token');
     localStorage.removeItem('User');
     this._currentUser.set(null);
-    this._authStatus.set( AuthStatus.notAuthenticated );
+    this._authStatus.set(AuthStatus.notAuthenticated);
 
   }
 }

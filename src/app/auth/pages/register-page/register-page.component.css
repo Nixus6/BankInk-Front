@@ -1,0 +1,15 @@
+.container__card__login__form{
+  margin-top: 12vh !important;
+}
+.button__register{
+  width: 100%;
+  background-color: #00afaa;
+}
+.imagen__register{
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../../../../assets/images/Familia-Tablet.webp');
+  width: 100%;
+  height: 723px;
+}

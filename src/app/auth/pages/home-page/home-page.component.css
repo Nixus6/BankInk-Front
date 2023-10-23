@@ -1,0 +1,57 @@
+.hero {
+  background-color: #fafafa;
+}
+
+@media (min-width: 64em) {
+  .hero .container {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.hero__image {
+  position: relative;
+  background-image: url("../../../../assets/images/rightPrincipal.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 17.5rem;
+}
+
+@media (min-width: 40em) {
+  .hero__image {
+    min-height: 25rem;
+    background-position: center 70%;
+  }
+}
+
+@media (min-width: 64em) {
+  .hero__image {
+    flex: 3;
+    order: 3;
+    height: 103vh;
+    left: 7rem;
+  }
+
+}
+
+.hero__text {
+  text-align: center;
+  color: #020202;
+}
+
+@media (min-width: 64em) {
+  .hero__text {
+    flex: 2;
+    order: 2;
+    text-align: left;
+  }
+}
+
+.hero__text p {
+  font-family: cibSans-Light, sans-serif !important;
+}
+
+.button__register{
+  background-color: #00afaa;
+}

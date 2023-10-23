@@ -1,6 +1,6 @@
 <div class="container__card__login">
   <div class="container__card__login__image">
-    <div class="imagen__login"></div>
+    <div class="imagen__register"></div>
   </div>
   <div class="container__card__login__form">
     <div class="card__login">
@@ -12,34 +12,27 @@
           Register
         </p>
       </div>
-      <form novalidate class="form_login">
+      <form novalidate [formGroup]="myForm" (ngSubmit)="register()" class="form_login">
 
         <div class="form__login__c">
           <label class="form__login__label">Firstname</label>
         </div>
         <div class="form__login__inputs__c">
-          <input class="login__input" placeholder="Firstname" type="text"/>
+          <input class="login__input" placeholder="firstname" type="text" formControlName="firstname"/>
         </div>
 
         <div class="form__login__c">
           <label class="form__login__label">Lastname</label>
         </div>
         <div class="form__login__inputs__c">
-          <input class="login__input" placeholder="Lastname" type="text"/>
+          <input class="login__input" placeholder="lastname" type="text" formControlName="lastname"/>
         </div>
 
         <div class="form__login__c">
           <label class="form__login__label" >Email</label>
         </div>
         <div class="form__login__inputs__c">
-          <input class="login__input" placeholder="Email" type="email" formControlName="email"/>
-        </div>
-
-        <div class="form__login__c">
-          <label class="form__login__label">Password</label>
-        </div>
-        <div class="form__login__inputs__c">
-          <input class="login__input" placeholder="Password" type="password" formControlName="password"/>
+          <input class="login__input" placeholder="ejemplo@ejemplo.com" type="email" formControlName="username"/>
         </div>
 
         <div class="form__login__c">
@@ -50,7 +43,7 @@
         </div>
 
         <div class="form__login__button">
-          <button class="button button__login" >Log In</button>
+          <button class="button button__register" [disabled]="myForm.invalid">Register</button>
         </div>
         <div class="form__login__registrar">
           <p class="registrar__text">¿Already have an account?
